@@ -1,0 +1,148 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mediacorp Awards Portal – Wireframe</title>
+<style>
+:root{--nv:#1b1f4b;--bl:#0d6efd;--bd:#cfd4dc;--bg:#f4f6fa;--rd:#d9534f}
+*{box-sizing:border-box}body{margin:0;font:14px system-ui,Segoe UI,sans-serif;color:#222;background:var(--bg)}
+header{background:var(--bl);color:#fff;display:flex;gap:10px;align-items:center;padding:8px 14px;flex-wrap:wrap}
+header b{flex:1;min-width:180px}.roles button{background:#fff3;color:#fff;border:1px solid #fff8;padding:6px 10px;border-radius:4px;cursor:pointer}
+.roles button.on{background:#fff;color:var(--bl);font-weight:600}header select{padding:5px}
+.wrap{display:flex;min-height:calc(100vh - 48px)}nav{width:190px;background:var(--nv);padding:10px 0;flex:none}
+nav a{display:block;color:#cfd3ff;padding:9px 16px;cursor:pointer}nav a.on,nav a:hover{background:var(--bl);color:#fff}
+nav small{display:block;color:#8d93c9;padding:6px 16px}main{flex:1;padding:16px;min-width:0}
+h2{margin:0 0 4px}.sub{color:#667;margin:0 0 12px}.card{background:#fff;border:1px solid var(--bd);border-radius:6px;padding:14px;margin-bottom:14px}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}.stats div{background:#fff;border:1px solid var(--bd);border-radius:6px;padding:10px 16px;min-width:120px}.stats b{font-size:22px;display:block}
+table{width:100%;border-collapse:collapse;background:#fff}th{background:#23272b;color:#fff;text-align:left}th,td{padding:8px;border-bottom:1px solid #e3e6ea}
+.tabs{display:flex;gap:4px;margin-bottom:12px}.tabs a{padding:7px 14px;border:1px solid var(--bd);background:#fff;border-radius:4px 4px 0 0;cursor:pointer}.tabs a.on{background:var(--bl);color:#fff}
+button.b,.b{border:0;border-radius:4px;padding:7px 14px;cursor:pointer;color:#fff;background:var(--bl);font:inherit}
+.b.g{background:#198754}.b.y{background:#ddaa00;color:#222}.b.k{background:#212529}.b.r{background:var(--rd)}.b.l{background:#fff;color:#222;border:1px solid var(--bd)}.b:disabled{opacity:.4;cursor:not-allowed}
+.tag{padding:2px 8px;border-radius:10px;font-size:12px;background:#e5e7eb}.Draft{background:#e5e7eb}.Submitted{background:#cfe2ff}.Validated{background:#c9f0d8}.Returned{background:#ffd9d6}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.tile{border:2px solid var(--bd);border-radius:6px;padding:14px;cursor:pointer;min-height:84px;background:#fff}.t1{background:#fff3b0;border-color:#e0b800}.t2{background:#c9f0d8;border-color:#198754}
+.tile small{display:block;margin-top:8px;color:#444}.leg span{display:inline-block;padding:2px 8px;border:1px solid var(--bd);margin-right:6px;font-size:12px;border-radius:3px}
+label{display:block;font-weight:600;font-size:13px;margin:10px 0 3px}label i{color:var(--rd)}
+input[type=text],input[type=email],input[type=date],select,textarea{width:100%;padding:8px;border:1px solid var(--bd);border-radius:4px;background:#f8fbff;font:inherit}
+.er{border-color:var(--rd)!important;background:#fff5f5!important}.em{color:var(--rd);font-size:12px}.two{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.chk label{font-weight:400;display:inline-block;width:48%;margin:4px 0}.steps{display:flex;gap:6px;margin-bottom:12px}.steps span{flex:1;padding:6px;text-align:center;background:#e5e7eb;border-radius:4px;font-size:12px}.steps .on{background:var(--bl);color:#fff}
+.bar{display:flex;justify-content:space-between;margin-top:16px;gap:8px}.note{background:#fff8e1;border:1px dashed #d4a800;padding:8px 10px;border-radius:4px;font-size:12px;margin-bottom:12px}
+.md{position:fixed;inset:0;background:#0008;display:flex;align-items:center;justify-content:center;padding:14px;z-index:5}.md[hidden]{display:none}.box{background:#fff;border-radius:6px;padding:18px;max-width:560px;width:100%;max-height:90vh;overflow:auto}
+#toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:#222;color:#fff;padding:9px 16px;border-radius:6px;z-index:9;display:none}
+.pg{height:8px;background:#e5e7eb;border-radius:4px;min-width:90px}.pg i{display:block;height:100%;background:#198754;border-radius:4px}
+@media(max-width:700px){.wrap{flex-direction:column}nav{width:100%;display:flex;overflow:auto}.two{grid-template-columns:1fr}}
+</style></head><body>
+<header><b>Mediacorp Awards Portal · Wireframe</b>
+<select id="prog" onchange="P=this.value;R()"><option value="SSA">Star Awards 2026</option><option value="PV">Pradhana Vizha</option><option value="PP">Pesta Perdana</option><option value="MSA">Media Screen Awards</option></select>
+<div class="roles" id="roles"></div><button class="b l" style="padding:5px 10px" onclick="location.reload()">Reset demo</button></header>
+<div class="wrap"><nav id="nav"></nav><main id="main"></main></div>
+<div class="md" id="md" hidden><div class="box" id="mb"></div></div><div id="toast"></div>
+<script>
+const $=s=>document.querySelector(s);
+const TY={Performance:['Best Actor 最佳男主角','Best Actress 最佳女主角','Best Supporting Actor 最佳男配角','Best Supporting Actress 最佳女配角','Best Programme Host (Entertainment & Infotainment) 最佳综艺及资讯节目主持人','Best Audio Personality 最佳主持人 (广播/播客类)','Best Rising Star 最佳潜力星','Young Talent Award 青苹果奖'],
+Programme:['Best Drama Serial 最佳戏剧','Best Entertainment Programme 最佳综艺节目','Best Infotainment Programme 最佳资讯节目','Best Short-form Entertainment Programme 最佳短篇综艺节目','Best Radio Programme 最佳电台节目','Best Theme Song 最佳主题曲']};
+const PL=['Channel 8','Channel U','Mediacorp YouTube Channel','Mewatch','Yes93.3','Love97.2','Capital95.8'];
+const AC=[TY.Performance[3],TY.Performance[0],TY.Programme[0]]; // categories assigned to the demo panellist / judge
+const ROLES={sub:'Submitter',adm:'Admin (Working Committee)',nom:'Nomination Panellist',jdg:'Judge'};
+const NAV={sub:[['dash','My Entries'],['form','New Entry']],adm:[['subs','Submissions'],['panels','Panels & Release'],['prog','Progress']],
+nom:[['ov','Ranking for Nominees'],['me','My Profile']],jdg:[['ov','Scoring for Nominees'],['sc','Overview of Scores'],['me','My Profile']]};
+let role='sub',view='dash',P='SSA',cur=0,F0={q:'',st:''};
+let E=[];[['1-2317','Nominee A',3],['194-5778','Nominee B',3],['166-1750','Nominee C',3],['64-8266','Nominee D',3],['84-3602','Nominee E',3],['90-1001','Nominee L',3],['90-1002','Nominee M',3]].forEach(a=>E.push({id:a[0],cat:AC[0],name:a[1],pr:'ABC Programme',st:'Validated'}));
+[['11-0412','Nominee F'],['11-0877','Nominee G'],['12-1190','Nominee H']].forEach(a=>E.push({id:a[0],cat:AC[1],name:a[1],pr:'XYZ Drama',st:'Validated'}));
+E.push({id:'20-0031',cat:AC[2],name:'Drama Serial 1',pr:'Drama Serial 1',st:'Validated'},{id:'20-0032',cat:AC[2],name:'Drama Serial 2',pr:'Drama Serial 2',st:'Validated'},
+{id:'30-0101',cat:TY.Performance[1],name:'Nominee J',pr:'Talk Show 5',st:'Submitted'},{id:'30-0102',cat:TY.Programme[5],name:'Theme Song 1',pr:'Drama Serial 3',st:'Submitted'},
+{id:'30-0103',cat:TY.Programme[2],name:'Infotainment 2',pr:'Infotainment 2',st:'Returned',note:'Episode link is private. Please make it public.'},{id:'30-0104',cat:TY.Performance[6],name:'Nominee K',pr:'Variety 9',st:'Draft'});
+let V={0:['1-2317','194-5778','166-1750','64-8266','84-3602']},NS={0:1},SC={'1-2317':{c:[8,7,9],m:'Strong, consistent performance.'}},JS={},R_={nom:true,jdg:true},LG={},FM=null,VAL=false;
+const ent=c=>E.filter(e=>e.cat==AC[c]&&e.st=='Validated');
+const sl=c=>NS[c]?ent(c).filter(e=>(V[c]||[]).includes(e.id)):[];
+const catSt=c=>NS[c]?2:(V[c]&&V[c].length?1:0), jSt=c=>JS[c]?2:(sl(c).some(e=>SC[e.id])?1:0);
+const tot=e=>SC[e.id]?SC[e.id].c.reduce((a,b)=>a+b,0):'';
+const MAN={sub:['Log in and choose the award programme.','Click New Entry: pick the category, fill in programme and company details.','Add supporting info, performer photo and episode links.','Review, accept the declaration and submit. A confirmation email is sent.','If Admin returns an entry, amend and resubmit it from My Entries.'],
+adm:['Configure the programme, categories, forms and deadlines.','Review submitted entries, then validate or return them with a note.','Assign panellists and judges, send their logins and release entries.','Monitor progress and send reminders.','Consolidate votes and scores, then confirm the results.'],
+nom:['Log in with the details sent by Admin.','Open an assigned category and review each entry and episode.','Pick your top 5, review your selection and submit.','Check the tiles to see which categories are still outstanding.'],
+jdg:['Log in with the details sent by Admin.','Open a shortlisted category and review each nominee, episode and reel.','Click Score on each nominee and save your scores and comments.','Submit scores for the category once every nominee is scored.']};
+function man(){open_(`<h3>User Manual · ${ROLES[role]}</h3><div class="note">Placeholder steps. Real manual content is TBC.</div><ol>${MAN[role].map(x=>`<li>${x}</li>`).join('')}</ol><button class="b l" onclick="close_()">Close</button>`)}
+function toast(t){const x=$('#toast');x.textContent=t;x.style.display='block';clearTimeout(x.t);x.t=setTimeout(()=>x.style.display='none',2600)}
+function open_(h){$('#mb').innerHTML=h;$('#md').hidden=false}function close_(){$('#md').hidden=true}
+function setRole(r){role=r;view=NAV[r][0][0];cur=null;R()}function go(v,c){view=v;cur=c;R()}
+function R(){$('#roles').innerHTML=Object.keys(ROLES).map(k=>`<button class="${k==role?'on':''}" onclick="setRole('${k}')">${ROLES[k]}</button>`).join('');
+$('#nav').innerHTML=`<small>${ROLES[role].toUpperCase()}</small>`+NAV[role].map(n=>`<a class="${n[0]==view?'on':''}" onclick="go('${n[0]}')">${n[1]}</a>`).join('')+'<a onclick="man()">User Manual</a>';
+$('#main').innerHTML=({sub:subV,adm:admV,nom:nomV,jdg:jdgV})[role]()}
+const pn=()=>({SSA:'Star Awards 2026',PV:'Pradhana Vizha',PP:'Pesta Perdana',MSA:'Media Screen Awards'})[P];
+const tag=s=>`<span class="tag ${s}">${s}</span>`;
+
+/* ---------- SUBMITTER ---------- */
+function subV(){if(view=='form')return formV();
+return `<h2>My Entries · ${pn()}</h2><p class="sub">Submission period closes 15 Jan (example). Internal teams and external production houses.</p>
+<div class="card"><button class="b" onclick="newF()">+ New entry</button></div>
+<table><tr><th>Ref</th><th>Category</th><th>Programme / Nominee</th><th>Status</th><th>Action</th></tr>${E.map((e,i)=>`<tr><td>${e.id}</td><td>${e.cat}</td><td>${e.pr}</td><td>${tag(e.st)}${e.note?`<div class="em">Admin note: ${e.note}</div>`:''}</td>
+<td>${e.st=='Returned'?`<button class="b y" onclick="resub(${i})">Amend &amp; resubmit</button>`:e.st=='Draft'?`<button class="b" onclick="newF()">Continue</button>`:'—'}</td></tr>`).join('')}</table>`}
+function resub(i){E[i].st='Submitted';delete E[i].note;toast('Resubmitted. Admin will re-review.');R()}
+function newF(){FM={step:0,type:'Performance',cat:'',f:{},pl:[],su:[],ph:'',l1:'',l2:'',tc:[],decl:false,err:{}};go('form')}
+const fld=(l,k,req,t)=>`<div><label>${l}${req?' <i>*</i>':''}</label><input type="${t||'text'}" class="${FM.err[k]?'er':''}" value="${FM.f[k]||''}" oninput="FM.f['${k}']=this.value">${FM.err[k]?'<span class="em">Required</span>':''}</div>`;
+function formV(){const f=FM,s=f.step,perf=f.type=='Performance',ts=/Theme Song/.test(f.cat);
+const hd=`<h2>New Entry · ${pn()}</h2><label style="font-weight:400;margin:0 0 8px"><input type="checkbox" ${VAL?'checked':''} onchange="VAL=this.checked;FM.err={};R()"> Enforce required fields (off by default so you can walk through every step)</label><div class="steps">${['1 Category','2 Programme & company','3 Supporting info & media','4 Review & submit'].map((x,i)=>`<span class="${i==s?'on':''}">${x}</span>`).join('')}</div>${P!='SSA'?'<div class="note">Category list for this programme is TBC. Star Awards categories shown as reference.</div>':''}`;
+let b='';
+if(s==0)b=`<div class="card"><label>Type <i>*</i></label><label style="font-weight:400"><input type="radio" name="t" ${perf?'checked':''} onchange="FM.type='Performance';FM.cat='';R()"> PERFORMANCE CATEGORIES</label><label style="font-weight:400"><input type="radio" name="t" ${!perf?'checked':''} onchange="FM.type='Programme';FM.cat='';R()"> PROGRAMME CATEGORIES</label>
+<label>Category <i>*</i></label><select class="${f.err.cat?'er':''}" onchange="FM.cat=this.value"><option value="">Select Category</option>${TY[f.type].map(c=>`<option ${c==f.cat?'selected':''}>${c}</option>`).join('')}</select>${f.err.cat?'<span class="em">Required</span>':''}</div>`;
+if(s==1)b=`<div class="card"><h3>Programme Information</h3><div class="two">${fld('Title of Programme Nominated','title',1)}${fld('Chinese Title of Programme Nominated (NA if not applicable)','ctitle',1)}</div>
+<label>Release Platforms (select multiple if applicable) <i>*</i></label><div class="chk">${PL.map(p=>`<label><input type="checkbox" ${f.pl.includes(p)?'checked':''} onchange="tg(FM.pl,'${p}')"> ${p}</label>`).join('')}</div>${f.err.pl?'<span class="em">Select at least one</span>':''}
+<div class="two">${fld('Release Period From','from',1,'date')}${fld('Release Period To','to',1,'date')}</div>
+${perf?`<div class="two">${fld('Name of Artiste','art',1)}${fld('Chinese Name of Artiste','cart',1)}${fld('Name of Role Played (NA if not applicable)','role',1)}${fld('Chinese Name of Role Played (NA if not applicable)','crole',1)}</div>`:''}</div>
+<div class="card"><h3>Company Information</h3><div class="two">${fld('Company Name','co',1)}${fld('Email Address','em',1,'email')}${fld('Contact Person','cp',1)}${fld('Mobile Number','mob',1)}</div></div>`;
+if(s==2)b=`<div class="card"><h3>Supporting Information</h3><select id="sk"><option>Credit for Key Production Personnel (in Chinese)</option><option>Synopsis in English</option><option>Synopsis in Chinese</option></select>
+<label>Word Count: 2000 · Remaining: <span id="wc">2000</span></label><textarea id="st" rows="5" placeholder="${ts?'Please provide names of 主唱, 作词, 作曲, 编曲, 制作':'Please provide names of 故事/编审, 编剧, 导演, 监制'}" oninput="$('#wc').textContent=Math.max(0,2000-(this.value.trim()?this.value.trim().split(/\\s+/).length:0))"></textarea>
+<div class="bar"><span></span><button class="b" style="background:#2bc4ea" onclick="addS()">Add</button></div><table><tr><th>Label</th><th>Description</th><th>Action</th></tr>${f.su.map((x,i)=>`<tr><td>${x[0]}</td><td>${x[1].slice(0,60)}</td><td><button class="b r" onclick="FM.su.splice(${i},1);R()">✕</button></td></tr>`).join('')||'<tr><td colspan="3">None added</td></tr>'}</table></div>
+${perf?`<div class="card"><h3>Image Upload</h3><label>Performer's Photo (max 2 MB, .jpg / .png only) <i>*</i></label><input type="file" accept=".jpg,.jpeg,.png" onchange="ph(this)"> <span class="${f.err.ph?'em':''}">${f.ph||(f.err.ph?'Required':'')}</span></div>`:''}
+<div class="card"><h3>YouTube Link (For Episode 01)</h3><label>Recommended episode with English subtitles <i>*</i></label><input type="text" class="${f.err.l1?'er':''}" value="${f.l1}" oninput="FM.l1=this.value" placeholder="https://youtube.com/…"><h3>YouTube Link (For Recommended Episode)</h3>
+<input type="text" value="${f.l2}" oninput="FM.l2=this.value" placeholder="https://youtube.com/…"><label>Recommended scene with time code</label><div style="display:flex;gap:6px"><input type="text" id="tc" placeholder="00:12:30"><button class="b y" onclick="if($('#tc').value){FM.tc.push($('#tc').value);R()}">Add</button></div><p>${f.tc.map(t=>`<span class="tag">${t}</span> `).join('')}</p></div>`;
+if(s==3)b=`<div class="card"><h3>Review</h3><p><b>${f.cat||'(no category selected)'}</b></p><p>${f.f.title||'(untitled)'} · ${f.f.co||'(no company)'}</p><p>Platforms: ${f.pl.join(', ')}</p><p>Supporting items: ${f.su.length} · Episode link: ${f.l1||'—'}</p>
+<label style="font-weight:400"><input type="checkbox" ${f.decl?'checked':''} onchange="FM.decl=this.checked"> I accept the Rules and Regulations of Star Awards 2026 and the declaration. <i>*</i></label>${f.err.decl?'<span class="em">You must accept to submit</span>':''}</div>`;
+return hd+b+`<div class="bar"><button class="b k" onclick="${s?'FM.step--;R()':"go('dash')"}">Back</button><span>
+${s==3?`<button class="b y" onclick="toast('Draft saved');go('dash')">Save draft</button> <button class="b" onclick="fin(1)">Duplicate &amp; Submit</button> <button class="b g" onclick="fin()">Submit Application</button>`:`<button class="b y" onclick="toast('Draft saved')">Edit Application</button> <button class="b" style="background:#0a0a8a" onclick="nx()">Save &amp; Next</button>`}</span></div>`}
+function tg(a,v){const i=a.indexOf(v);i<0?a.push(v):a.splice(i,1)}
+function addS(){const t=$('#st').value.trim();if(!t)return;FM.su.push([$('#sk').value,t]);R()}
+function ph(el){const x=el.files[0];if(!x)return;if(x.size>2097152){FM.ph='';toast('File exceeds 2 MB');el.value='';return}FM.ph=x.name}
+function chk(s){if(!VAL){FM.err={};return true}const f=FM,e={},p=f.type=='Performance';if(s==0&&!f.cat)e.cat=1;
+if(s==1){['title','ctitle','from','to','co','em','cp','mob'].concat(p?['art','cart','role','crole']:[]).forEach(k=>{if(!f.f[k])e[k]=1});if(!f.pl.length)e.pl=1}
+if(s==2){if(p&&!f.ph)e.ph=1;if(!f.l1)e.l1=1}if(s==3&&!f.decl)e.decl=1;f.err=e;return !Object.keys(e).length}
+function nx(){if(chk(FM.step))FM.step++;else toast('Please fix the highlighted fields');R()}
+function fin(dup){if(!chk(3)){R();return}E.unshift({id:'NEW-'+(E.length+1),cat:FM.cat||'(Category not selected)',name:FM.f.art||FM.f.title||'(Unnamed)',pr:FM.f.title||'(Untitled entry)',st:'Submitted'});
+toast('Entry submitted. Confirmation email sent.');if(dup){FM.step=0;FM.decl=false;FM.cat='';R()}else go('dash')}
+
+/* ---------- ADMIN ---------- */
+function admV(){const c=s=>E.filter(e=>e.st==s).length;let h=`<h2>Admin Dashboard · ${pn()}</h2><div class="stats"><div><b>${E.length}</b>Entries</div><div><b>${c('Submitted')}</b>To review</div><div><b>${c('Validated')}</b>Validated</div><div><b>${c('Returned')}</b>Returned</div></div>`;
+h+=`<div class="tabs">${NAV.adm.map(n=>`<a class="${n[0]==view?'on':''}" onclick="go('${n[0]}')">${n[1]}</a>`).join('')}</div>`;
+if(view=='subs'){const rows=E.map((e,i)=>[e,i]).filter(([e])=>(!F0.st||e.st==F0.st)&&(!F0.q||(e.id+e.cat+e.pr+e.name).toLowerCase().includes(F0.q.toLowerCase())));
+return h+`<div class="card" style="display:flex;gap:8px;flex-wrap:wrap"><input type="text" id="q" style="max-width:240px" placeholder="Search entries…" value="${F0.q}" oninput="F0.q=this.value;R();var x=$('#q');x.focus();x.setSelectionRange(99,99)"><select style="max-width:160px" onchange="F0.st=this.value;R()"><option value="">All statuses</option>${['Draft','Submitted','Validated','Returned'].map(s=>`<option ${F0.st==s?'selected':''}>${s}</option>`).join('')}</select></div>
+<table><tr><th>Ref</th><th>Category</th><th>Programme</th><th>Status</th><th>Action</th></tr>${rows.map(([e,i])=>`<tr><td>${e.id}</td><td>${e.cat}</td><td>${e.pr}</td><td>${tag(e.st)}</td><td><button class="b" onclick="rev(${i})">Review</button></td></tr>`).join('')}</table>`}
+if(view=='panels')return h+`<div class="note">Panel members see only their assigned categories and cannot see each other.</div><table><tr><th>Name</th><th>Role</th><th>Categories</th><th>Login</th></tr>${[['Panellist 1','Nomination'],['Panellist 2','Nomination'],['Judge 1','Judge'],['Judge 2','Judge (overseas)']].map(p=>`<tr><td>${p[0]}</td><td>${p[1]}</td><td>${AC.length} assigned</td><td>${LG[p[0]]?`<button class="b l" onclick="LG['${p[0]}']=0;R()">Sent ✓ Undo</button>`:`<button class="b" onclick="LG['${p[0]}']=1;toast('Login details sent to ${p[0]}');R()">Send login</button>`}</td></tr>`).join('')}</table>
+<div class="card" style="margin-top:14px"><b>Release</b><p>1. Validated entries → Nomination panel: ${R_.nom?`✅ Released <button class="b l" onclick="R_.nom=0;R()">Undo</button>`:`<button class="b" onclick="R_.nom=1;R()">Release</button>`}</p><p>2. Confirm shortlist → Judges: ${R_.jdg?`✅ Released <button class="b l" onclick="R_.jdg=0;R()">Undo</button>`:`<button class="b g" onclick="R_.jdg=1;toast('Shortlist released to judges');R()">Confirm shortlist &amp; release</button>`}</p></div>`;
+const row=(n,d,t)=>`<tr><td>${n}</td><td><div class="pg"><i style="width:${d/t*100}%"></i></div></td><td>${d}/${t} categories</td><td>${d<t?`<button class="b y" onclick="toast('Reminder sent to ${n}')">Send reminder</button>`:'Done'}</td></tr>`;
+const nd=AC.filter((_,i)=>NS[i]).length,jd=AC.filter((_,i)=>JS[i]).length;
+return h+`<h3>Nomination progress</h3><table><tr><th>Panellist</th><th>Progress</th><th>Submitted</th><th></th></tr>${row('Panellist 1',nd,3)}${row('Panellist 2',1,3)}</table><h3>Judging progress</h3><table><tr><th>Judge</th><th>Progress</th><th>Submitted</th><th></th></tr>${row('Judge 1',jd,3)}${row('Judge 2',2,3)}</table>`}
+function rev(i){const e=E[i];open_(`<h3>Review entry ${e.id}</h3><p><b>${e.cat}</b></p><p>${e.pr} · ${tag(e.st)}</p><p>Form fields, photo, episode link and supporting info would show here.</p><p><a href="#" onclick="toast('Opens episode player');return false">▶ Watch submitted episode</a> · <a href="#" onclick="toast('5-min reel uploaded');return false">⬆ Upload 5-min nominee reel</a></p><label>Note to submitter (if returning)</label><textarea id="rn" rows="2"></textarea>
+<div class="bar"><button class="b l" onclick="close_()">Close</button><span><button class="b r" onclick="E[${i}].st='Returned';E[${i}].note=$('#rn').value||'Please amend.';close_();toast('Returned to submitter');R()">Return</button> <button class="b g" onclick="E[${i}].st='Validated';close_();toast('Entry validated');R()">Validate</button></span></div>`)}
+
+/* ---------- NOMINATION PANELLIST ---------- */
+function nomV(){if(view=='me')return me('Panellist 1');
+if(!R_.nom)return `<h2>Ranking for Nominees</h2><div class="note">No entries released yet. Admin → Panels &amp; Release.</div>`;
+if(cur!==null&&cur!==undefined)return nomL(cur);
+return `<h2>Ranking for Nominees</h2><p class="sub">You only see the categories assigned to you.</p><p class="leg"><span>Not started</span><span class="t1">In progress</span><span class="t2">Submitted</span></p><div class="grid">${AC.map((c,i)=>`<div class="tile t${catSt(i)}" onclick="go('ov',${i})"><b>${c}</b><small>${['Not started','In progress ('+(V[i]||[]).length+'/5 picked)','Submitted'][catSt(i)]}</small></div>`).join('')}</div>`}
+function nomL(c){const L=ent(c),v=V[c]=V[c]||[],need=Math.min(5,L.length),lk=NS[c];
+return `<h2>${AC[c]}</h2><p class="sub">Pick your top 5. Selected: <b>${v.length}/${need}</b></p><table><tr><th>Top 5</th><th>Ref No</th><th>Name</th><th>Programme / Role / Video</th><th>Remarks</th></tr>${L.map(e=>`<tr><td><input type="checkbox" ${v.includes(e.id)?'checked':''} ${lk?'disabled':''} onchange="pick(${c},'${e.id}',this)"></td><td>${e.id}</td><td>${e.name}</td><td><a href="#" onclick="sum('${e.id}');return false">${e.pr}</a> · ▶</td><td><input type="text" ${lk?'disabled':''}></td></tr>`).join('')}</table>
+<div class="bar"><button class="b k" onclick="go('ov')">Back</button><span><button class="b g" ${lk?'disabled':''} onclick="toast('Progress saved')">Save</button> <button class="b y" ${lk||v.length<need?'disabled':''} onclick="subN(${c})">${lk?'Submitted':'Review &amp; Submit'}</button></span></div>`}
+function pick(c,id,el){const v=V[c];if(el.checked){if(v.length>=5){el.checked=false;toast('Maximum 5 selections');return}v.push(id)}else v.splice(v.indexOf(id),1);R()}
+function sum(id){const e=E.find(x=>x.id==id);open_(`<h3>Entry summary</h3><p><b>${e.name}</b> · ${e.pr}</p><p>${e.cat}</p><p>Submitter identity shown or hidden: TBC. Episode player would embed here.</p><button class="b l" onclick="close_()">Close</button>`)}
+function subN(c){open_(`<h3>Confirm nominations</h3><ol>${V[c].map(id=>`<li>${E.find(e=>e.id==id).name}</li>`).join('')}</ol><p class="em">Changes after submission: TBC.</p><div class="bar"><button class="b l" onclick="close_()">Back</button><button class="b g" onclick="NS[${c}]=1;close_();toast('Nominations submitted');R()">Confirm &amp; submit</button></div>`)}
+
+/* ---------- JUDGE ---------- */
+function jdgV(){if(view=='me')return me('Judge 1');
+if(!R_.jdg)return `<h2>Scoring for Nominees</h2><div class="note">Shortlist not released yet. Admin → Panels &amp; Release → Confirm shortlist.</div>`;
+if(view=='sc')return `<h2>Overview of Scores</h2><table><tr><th>Category</th><th>Nominee</th><th>Total</th></tr>${AC.flatMap((c,i)=>sl(i).map(e=>`<tr><td>${c}</td><td>${e.name}</td><td>${tot(e)||'—'}</td></tr>`)).join('')}</table>`;
+if(cur!==null&&cur!==undefined){const c=cur,L=sl(c),all=L.every(e=>SC[e.id]);
+return `<h2>${AC[c]}</h2><p class="sub">Nominee list</p><table><tr><th>Nominee</th><th>Programme</th><th>Score</th><th>Status</th><th>Action</th></tr>${L.map(e=>`<tr><td>${e.name}</td><td>${e.pr}</td><td>${tot(e)}</td><td>${SC[e.id]?tag(JS[c]?'Submitted':'Draft'):'<span class="tag Returned">Pending</span>'}</td><td><button class="b" style="background:#2bc4ea" ${JS[c]?'disabled':''} onclick="scr(${c},'${e.id}')">Score</button></td></tr>`).join('')}</table>
+<div class="bar"><button class="b k" onclick="go('ov')">Back</button><button class="b g" ${!all||JS[c]?'disabled':''} onclick="JS[${c}]=1;toast('Scores submitted');R()">${JS[c]?'Submitted':'Submit scores for category'}</button></div>`}
+return `<h2>Scoring for Nominees</h2><p class="sub">You only see shortlisted categories assigned to you.${AC.some((_,i)=>NS[i])?'':' None shortlisted yet: the nomination panel must submit first.'}</p><p class="leg"><span>Not scored</span><span class="t1">Scored, not submitted</span><span class="t2">Submitted</span></p><div class="grid">${AC.map((c,i)=>!NS[i]?'':`<div class="tile t${jSt(i)}" onclick="go('ov',${i})"><b>${c}</b><small>${['Pending','Scored, not submitted','Submitted'][jSt(i)]}</small></div>`).join('')}</div>`}
+function scr(c,id){const e=E.find(x=>x.id==id),s=SC[id]||{c:[5,5,5],m:''};
+open_(`<h3>Score: ${e.name}</h3><p>${e.pr} · <a href="#" onclick="toast('Opens episode / 5-min reel player');return false">▶ Episode &amp; reel</a></p><div class="note">Judging criteria and scale are TBC. Placeholders shown.</div>${[0,1,2].map(k=>`<label>Criterion ${k+1} (0–10): <span id="v${k}">${s.c[k]}</span></label><input type="range" min="0" max="10" value="${s.c[k]}" oninput="$('#v${k}').textContent=this.value" id="c${k}">`).join('')}<label>Comments</label><textarea id="cm" rows="2">${s.m}</textarea>
+<div class="bar"><button class="b l" onclick="close_()">Cancel</button><button class="b g" onclick="SC['${id}']={c:[0,1,2].map(k=>+$('#c'+k).value),m:$('#cm').value};close_();toast('Score saved');R()">Save score</button></div>`)}
+function me(n){return `<h2>My Profile</h2><div class="card">${n}<br><small>Name, email, password reset: login method TBC.</small></div>`}
+R();
+</script></body></html>
