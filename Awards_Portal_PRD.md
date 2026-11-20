@@ -121,6 +121,7 @@ Explore a centralised awards management platform with four main areas: Submissio
 10. The portal records the submission and displays a confirmation message. A confirmation email may also be sent.
 
 **Expected Outcome:** Entry is successfully submitted and recorded in the portal. -  needs more clarity
+
 **Edge Cases:** Missing mandatory fields, unsupported or oversized files, or submission deadline has passed.
 
 #### Use Case 2: Awards Working Committee Admin
@@ -155,6 +156,7 @@ Explore a centralised awards management platform with four main areas: Submissio
 26. Admin reviews and confirms the final results, including resolving ties where necessary.
 
 **Expected Outcome:** Submissions are reviewed and the awards process is managed centrally. -  needs more clarity
+
 **Edge Cases:** Incomplete or ineligible entries, incorrect category assignments, or entries requiring reopening.
 
 #### Use Case 3: Review Entries and Submit Nominations
@@ -175,6 +177,7 @@ Explore a centralised awards management platform with four main areas: Submissio
 12. The portal records the nominations and updates the submission status.
 
 **Expected Outcome:** Nominations are recorded for the assigned categories. -  needs more clarity
+
 **Edge Cases:** Incomplete entries, inaccessible supporting materials, or nomination deadline has passed.
 
 #### Use Case 4: Evaluate Shortlisted Entries
@@ -196,6 +199,7 @@ Explore a centralised awards management platform with four main areas: Submissio
 13. The portal records the scores and updates the judging status.
 
 **Expected Outcome:** EJudging scores and comments are recorded for the assigned entries. -  needs more clarity
+
 **Edge Cases:** Inaccessible videos, incomplete scoring, or judging deadline has passed.
 
 ---
