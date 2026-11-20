@@ -1,10 +1,5 @@
 # Product Requirements Document (PRD)
 
-> **Document Status:** [Draft | In Review | Approved | Archived]  
-> **Last Updated:** [Date]  
-> **Product Manager:** [Your Name]  
-> **Contributors:** [Names/Roles]
-
 ---
 
 ## Executive Summary
@@ -21,8 +16,6 @@ Explore a centralised awards management platform with four main areas: Submissio
 - Reduce manual administrative work involved in managing submissions, panel assignments and progress tracking (target: to be determined).
 - Achieve successful completion of submissions, nominations and judging within their respective deadlines (target: to be determined).
 
-**Launch Target:** TBD
-
 ---
 
 ## Background & Context
@@ -34,14 +27,6 @@ Explore a centralised awards management platform with four main areas: Submissio
   - Four stakeholder groups require different access and functions
   - The process involves multiple stages, from submission to winner confirmation.
   - Secure media storage, video playback and progress tracking are key considerations.
-
-- **User Quotes:** 
-  > To be collected during further stakeholder discussions.
-
-### Market Analysis
-- **Market Size:** NA
-- **Competitive Landscape:** Award Force : Existing platform researched for its submission and judging features.
-- **Differentiation:** A centralised platform designed around Mediacorp's four award programmes, stakeholder workflows and specific requirements.
 
 ---
 
@@ -58,18 +43,6 @@ Explore a centralised awards management platform with four main areas: Submissio
 3. Nomination Panellists: Review entries within assigned categories and select nominees.
 4. Judges: Review shortlisted entries and submit scores based on judging criteria.
 5. All Users: Access the information and functions relevant to their roles without viewing unauthorised information.
-
-### Success Metrics (Detailed) (TBD)
-
-| Metric | Baseline | Target | Timeframe | Measurement Method |
-|--------|----------|--------|-----------|-------------------|
-| [Metric 1] | [Current value] | [Goal value] | [When] | [How you'll measure] |
-| [Metric 2] | [Current value] | [Goal value] | [When] | [How you'll measure] |
-| [Metric 3] | [Current value] | [Goal value] | [When] | [How you'll measure] |
-
-### Non-Goals (Out of Scope) (TBD)
-- [Explicitly state what this product/feature will NOT do]
-- [Helps prevent scope creep and manage expectations]
 
 ---
 
@@ -213,14 +186,10 @@ Explore a centralised awards management platform with four main areas: Submissio
    - **Description:** Provide secure access to the four portal areas, with permissions appropriate to each stakeholder.
    - **User Story:** As a portal user, I want to log in securely and access only the functions relevant to my role so that I can carry out my responsibilities.
    - **Acceptance Criteria:**
-     - [ ] Internal production teams and external production houses can access the Submission Portal.
-     - [ ] Awards Working Committee members can access the Admin Portal.
-     - [ ] Nomination Panellists can access the Nomination Panel Portal.
-     - [ ] Judges can access the Judging Panel Portal.
-     - [ ] The system supports secure user authenticatio
+     - [ ] Each stakeholder can access their own assigned portal (Eg, Nomination Panellists can access the Nomination Panel Portal.)
+     - [ ] The system supports secure user authentication
      - [ ] Admin access is controlled according to assigned administrative permissions.
      - [ ] Panellists and judges can only access their assigned categories and entries.
-     - [ ] Unauthorised users cannot access restricted information or portal functions.
 
 2. **Award Programme and Category Support [BU]**
    - **Description:** Support the different award programmes, categories and category-specific submission requirements.
@@ -231,7 +200,7 @@ Explore a centralised awards management platform with four main areas: Submissio
      - [ ] The portal supports programme categories, which recognise television programmes or productions.
      - [ ] The portal supports the different categories and requirements under MSA.
      - [ ] Each category can have its own relevant submission fields.
-     - [ ] Special categories can include additional information fields where required, such as composer and lyricist details for Best Theme Song.
+     - [ ] Special categories can include additional information fields where required, such as composer and lyricist details for Best Theme Song. (Eg, MSA)
 
 3. **Award Entry Submission [BU]**
    - **Description:** Allow internal production teams and external production houses to submit entries and supporting materials for the relevant award categories.
@@ -239,9 +208,7 @@ Explore a centralised awards management platform with four main areas: Submissio
    - **Acceptance Criteria:**
      - [ ] Submitters can submit entries under the available award categories.
      - [ ] The portal provides submission forms with fields relevant to each award category.
-     - [ ] Submitters can provide performer information, programme information, production credits and other category-specific details.
-     - [ ] Submitters can upload relevant photographs and supporting documents.
-     - [ ] Submitters can provide episode links and other relevant video content.
+     - [ ] Submitters can upload relevant photographs and supporting documents, episode links and other relevant video content. 
      - [ ] The portal displays the relevant rules and regulations for each award programme.
      - [ ] Submitters must acknowledge the applicable declaration and submission requirements.
      - [ ] The Awards Working Committee can perform test submissions.
@@ -255,30 +222,24 @@ Explore a centralised awards management platform with four main areas: Submissio
      - [ ] Personal and confidential information is protected.
      - [ ] Submissions, users and award information are maintained in a centralised database.
      - [ ] Voting information is stored securely.
-     - [ ] Judging scores and comments are stored securely.
      - [ ] Data backup and recovery arrangements are provided.
 
 5. **Admin Submission Review and Management [BU + Internal]**
    - **Description:** Allow the Awards Working Committee to review, manage and modify submitted entries before they proceed to nomination and judging.
    - **User Story:** As an Admin, I want to review and manage submitted entries so that the information is ready for the next stage of the awards process.
    - **Acceptance Criteria:**
-     - [ ] Admin can view all submitted entries.
+     - [ ] Admin can view all submitted entries and manage submission information across the different award programmes.
      - [ ] Admin can review the information and supporting materials for each entry.
-     - [ ] Admin can check and modify submitted entries
+     - [ ] Admin can check, modify, validate and return submitted entries
      - [ ] Admin can upload additional materials, including five-minute nominee performance reels for judging.
-     - [ ] Admin can validate entries before they proceed to the next stage.
-     - [ ] Admin can manage submission information across the different award programmes.
 
 6. **Nomination and Judging Panel Management [BU + Internal]**
    - **Description:** Allow the Awards Working Committee to manage nomination panellist and judge information, assignments and portal access.
    - **User Story:** As an Admin, I want to manage panel members and their category assignments so that they can access the correct entries for their responsibilities.
    - **Acceptance Criteria:**
-     - [ ] Admin can update nomination panel information in the system.
-     - [ ] Admin can update judging panel information in the system.
-     - [ ] Admin can assign award categories to nomination panellists.
-     - [ ] Admin can assign award categories to judges.
-     - [ ] Admin can assign validated entries to the nomination panel for top-five voting.
-     - [ ] Admin can assign validated entries to judges for scoring.
+     - [ ] Admin can update nomination panel information and judging panel information in the system.
+     - [ ] Admin can assign award categories to nomination panellists and judges
+     - [ ] Admin can assign validated entries to the nomination panel and judges for voting.
      - [ ] Admin can send login information to nomination panellists and judges.
      - [ ] Admin can manage and distribute login information to the relevant users.
 
@@ -307,7 +268,7 @@ Explore a centralised awards management platform with four main areas: Submissio
      - [ ] Judges can review submitted episodes and relevant performance reels.
      - [ ] Judges can evaluate entries using the relevant judging criteria.
      - [ ] Judges can input and submit their scores.
-     - [ ] The portal records submitted scores and comments.
+     - [ ] The portal records submitted scores
      - [ ] The portal tracks judging progress.
      - [ ] Judges can identify categories for which scores have not yet been submitted.
      - [ ] The portal supports the required restrictions on changing scores after submission, once the workflow is confirmed.
@@ -316,13 +277,10 @@ Explore a centralised awards management platform with four main areas: Submissio
    - **Description:** Allow the Awards Working Committee to monitor nomination and judging progress and identify outstanding work.
    - **User Story:** As an Admin, I want to monitor the progress of panellists and judges so that I can follow up on outstanding votes and scores.
    - **Acceptance Criteria:**
-     - [ ] Admin can monitor nomination panellists' progress.
-     - [ ] Admin can monitor judges' progress.
-     - [ ] Admin can identify panellists who have not submitted their votes.
-     - [ ] Admin can identify judges who have not submitted their scores.
+     - [ ] Admin can monitor nomination panellists' and judges' progress.
+     - [ ] Admin can identify panellists and judges who have not submitted their votes.
      - [ ] Admin can monitor progress across the different award categories.
      - [ ] The system records voting submissions and timestamps.
-     - [ ] The system records judging submissions and changes.
 
 10. **Audit Logs and Activity Tracking [BU + Internal]**
    - **Description:** Maintain records of user access and important changes or administrative activities performed within the portal.
@@ -331,15 +289,11 @@ Explore a centralised awards management platform with four main areas: Submissio
      - [ ] The portal records user access and login activities.
      - [ ] The portal records important administrative actions and changes.
      - [ ] The portal records relevant changes to submissions.
-     - [ ] The portal records voting submissions and timestamps.
-     - [ ] The portal records judging submissions and changes.
-     - [ ] Audit records are securely maintained.
 
 11. **Reusable Award Configurations and Data Protection [BU]**
    - **Description:** Retain the portal's structure and configurations for future award years while managing personal data in accordance with PDPA requirements.
    - **User Story:** As an Admin, I want to reuse award configurations in future years while ensuring personal data is handled appropriately so that the portal can support recurring award cycles.
    - **Acceptance Criteria:**
-     - [ ] The portal retains its structure and configurations for future award years.
      - [ ] Award configurations can be reused without rebuilding the portal setup each year.
      - [ ] Personal data is deleted appropriately in accordance with PDPA requirements.
      - [ ] Reusable configurations are retained when personal data is deleted.
@@ -351,9 +305,7 @@ Explore a centralised awards management platform with four main areas: Submissio
    - **Acceptance Criteria:**
      - [ ] Submitters can save incomplete entries as drafts.
      - [ ] Submitters can return to incomplete submissions before the deadline.
-     - [ ] Nomination Panellists can save incomplete voting progress.
-     - [ ] Judges can save incomplete scoring progress.
-     - [ ] The portal preserves saved information when users leave and return to the portal.
+     - [ ] Nomination Panellists and Judges can save incomplete voting progress.
 
 2. **Submission Validation and Completion Tracking [Internal]**
    - **Description:** Help Submitters identify incomplete or invalid information before submitting an entry.
@@ -371,70 +323,44 @@ Explore a centralised awards management platform with four main areas: Submissio
    - **Acceptance Criteria:**
      - [ ] Submitters receive email confirmation after submitting an entry.
      - [ ] Submitters receive relevant submission reminders.
-     - [ ] Nomination Panellists receive login information and automated reminders.
-     - [ ] Judges receive login information and automated reminders.
+     - [ ] Submitters, Nomination Panellists and Judges receive login information and automated reminders.
+     - [ ] Nomination Panellists and Judges receive automated reminders.
      - [ ] Admin can send reminders for pending tasks.
-     - [ ] The portal can identify users with outstanding submissions, votes or scores.l.
+     - [ ] The portal can identify users with outstanding submissions, votes or scores.
 
 4. **Admin Dashboard and Task Management [BU + Internal]**
    - **Description:** Provide a central dashboard for the Awards Working Committee to monitor award progress and outstanding tasks.
    - **User Story:** As an Admin, I want to view key statistics and outstanding tasks in one place so that I can manage the awards process more efficiently.
    - **Acceptance Criteria:**
      - [ ] The dashboard displays key statistics for the award programmes.
-     - [ ] Admin can view outstanding submissions, votes and scores.
      - [ ] Admin can filter information by award programme, category and submission status.
      - [ ] Admin can search for relevant entries and users.
-     - [ ] Admin can perform bulk actions where applicable.
-     - [ ] Admin can access a centralised view of outstanding tasks.
-     - [ ] Admin can send reminders for pending tasks.
+     - [ ] Admin can access a centralised view of outstanding tasks and votes
 
 5. **Nomination and Judging Progress Indicators [BU + Internal]**
    - **Description:** Provide clear progress indicators to help panellists and judges track their assigned work.
    - **User Story:** As a panellist or judge, I want to see the status of my assigned categories so that I know which tasks I have completed and which remain outstanding.
    - **Acceptance Criteria:**
-     - [ ] Nomination Panellists can identify outstanding votes and incomplete categories.
-     - [ ] Judges can identify outstanding scores and incomplete categories.
      - [ ] Panellists can review their own selections before submitting.
      - [ ] Judges can view clear scoring criteria and evaluation fields.
-     - [ ] The portal displays clear progress indicator
-     - [ ] The Judge Portal uses the proposed colour indicators: white for scoring not completed, yellow for completed but not submitted, and green for submitted.
+     - [ ] The Judge Portal uses the proposed colour indicators for the progress indicator: white for scoring not completed, yellow for completed but not submitted, and green for submitted.
 
-6. **Search, Filters and Bulk Actions [Internal]**
-   - **Description:** Provide Admin with tools to search, filter and manage multiple records efficiently.
-   - **User Story:** As an Admin, I want to search and filter submissions and user records so that I can manage large volumes of information more easily.
-   - **Acceptance Criteria:**
-     - [ ] Admin can search submissions and user record
-     - [ ] Admin can filter by award programme.
-     - [ ] Admin can filter by category.
-     - [ ] Admin can filter by submission status.
-     - [ ] Admin can perform bulk actions on selected records where applicable.
-
-7. **Results Consolidation and Report Export [BU + Internal]**
+6. **Results Consolidation and Report Export [BU + Internal]**
    - **Description:** Allow the Awards Working Committee to consolidate nomination and judging information and export relevant reports.
    - **User Story:** As an Admin, I want to consolidate and export award information so that I can review results and prepare reports.
    - **Acceptance Criteria:**
-     - [ ] Admin can view consolidated nomination voting activity.
-     - [ ] Admin can view consolidated judging scores.
+     - [ ] Admin can view consolidated scores.
      - [ ] Admin can export entries, shortlists, scores and results.
      - [ ] The portal supports exporting reports to Excel and PDF.
      - [ ] Admin can generate reports across award categories and programmes.
 
-8. **Admin Test Submissions and Testing Environment [BU + Internal]**
+7. **Admin Test Submissions and Testing Environment [BU + Internal]**
    - **Description:** Allow the Awards Working Committee to test portal functions and submissions before the live award cycle.
    - **User Story:** As an Admin, I want to test submissions and portal functions so that I can identify issues before the live process begins.
      - [ ] The Awards Working Committee can create test submissions.
      - [ ] Test accounts can be created for checking portal functions.
      - [ ] Test submissions do not affect live award records if a separate test environment is implemented.
      - [ ] Test data can be removed before launch.
-
-9. **Configurable Award Management [Internal]**
-   - **Description:** Allow award configurations and management settings to be adjusted to support different programme requirements.
-   - **User Story:** As an Admin, I want to configure award-related settings so that the portal can accommodate different award programmes and cycles.
-   - **Acceptance Criteria:**
-     - [ ] Admin can configure award management settings where authorised.
-     - [ ] Admin can configure categories, forms and deadlines where this responsibility is assigned to Admin.
-     - [ ] The portal supports different requirements across award programmes.
-     - [ ] Admin can manage relevant award settings without requiring changes to the underlying system.
 
 #### Nice to Have (P2) - Future Consideration
 1. **AI-Assisted Submission Checks and Summaries [Internal]**
@@ -461,86 +387,13 @@ Explore a centralised awards management platform with four main areas: Submissio
      - [ ] The portal can record artistes' years of experience.
      - [ ] The portal can use the relevant information to determine eligibility for popularity award categories.
 
-4. **Reusable Submission Information and Submission History [Internal]**
-   - **Description:** Allow relevant information from previous submissions to be reused and provide access to submission history.
-   - **User Story:** As a Submitter, I want to reuse relevant information from previous entries so that I do not need to enter the same information repeatedly.
-   - **Acceptance Criteria:**
-     - [ ] Submitters can reuse relevant information from previous submissions where permitted.
-     - [ ] Submitters can view their submission history across award years, subject to the data retention policy.
-     - [ ] Reused information can be reviewed and updated before submission.
-
-5. **Advanced Award Configuration and Historical Records [BU + Internal]**
-   - **Description:** Support more advanced configuration and historical record management for future award cycles.
-   - **User Story:** As an Admin, I want to reuse and manage previous award configurations and records so that future award cycles can be set up more efficiently.
-   - **Acceptance Criteria:**
-     - [ ] Admin can duplicate award configurations for subsequent years.
-     - [ ] The portal can maintain historical submission and results records where retention is approved.
-     - [ ] The portal supports configurable nomination rounds and voting rules.
-     - [ ] The portal supports configurable judging rubrics for different award categories.
-     - [ ] The portal can generate consolidated nomination and judging reports.
-     - [ ] The portal can provide historical analytics and reporting.
-
-6. **Public Voting Campaign Preparation and Votigo Integration [BU]**
-   - **Description:** Explore the use of eligible artiste information for public voting campaigns and potential integration with Votigo.
-   - **User Story:** As an Admin, I want to prepare eligible artiste information for public voting campaigns so that the information can support the relevant voting process.
-   - **Acceptance Criteria:**
-     - [ ] The portal can maintain relevant eligible artiste information for public voting preparation.
-     - [ ] Potential integration with Votigo can be evaluated.
-     - [ ] The data and integration requirements for public voting can be defined.
-
-7. **Integration with Internal Platforms and Services [Internal]**
+4. **Integration with Internal Platforms and Services [Internal]**
    - **Description:** Explore integration with other internal Mediacorp platforms and services.
    - **User Story:** As an Admin, I want the awards portal to connect with relevant internal platforms so that information can be shared where required.
    - **Acceptance Criteria:**
      - [ ] Potential internal systems for integration can be identified.
      - [ ] Integration requirements and data exchange methods can be evaluated.
      - [ ] Any integration must comply with internal security and access requirements.
-
-### Non-Functional Requirements
-
-#### Performance
-- [BU] The portal should provide better stability than the existing Stemcore platform.
-- [BU] The portal should provide better stability than the existing Stemcore platform.
-- [BU] The portal should provide a better user experience than the existing Stemcore platform.
-- [BU] Submitted episodes and performance reels should be accessible for review through the portal.
-- [Internal] The portal should support reliable access during submission, nomination and judging periods.
-- [Internal] The system should support the expected number of users, submissions and uploaded files.
-- [Internal – To confirm] Page-load time, response time and concurrent-user targets should be established based on expected usage.
-
-#### Security & Privacy
--[BU] The portal must provide appropriate access controls for users.
-- [BU] Panellists must only be able to access their assigned categories and entries.
-- [BU] Judges must only be able to access their assigned categories and nominees.
-- [BU] Panellists and judges must not be able to view the identities of other panel members.
-- [BU] User access and activities must be recorded in audit logs.
-- [BU] Personal data must be deleted appropriately in accordance with PDPA requirements, while reusable award configurations are retained.
-- [Internal] User authentication and access permissions must be implemented securely.
-- [Internal] Personal and confidential information must be protected.
-- [Internal] Voting information, scores and comments must be stored securely.
-- [Internal] Data backup and recovery arrangements must be provided.
-- [Internal – To confirm] Data encryption requirements, audit-log retention periods and detailed data deletion procedures should be defined.
-
-#### Scalability
-- [BU] The portal must support the four award programmes and their different categories and requirements.
-- [BU] The portal must retain its structure and configurations for future award years.
-- [Internal] The system should support different numbers of submissions, users and uploaded files across award programmes.
-- [Internal] Storage capacity should account for photographs, videos, episodes, programme materials and performance reels.
-- [Internal – To confirm] Expected user numbers, submission volumes, video sizes and storage requirements should be established with the BU.
-
-#### Accessibility
-- [BU] Overseas nomination panellists and judges must be able to access the portal and its content.
-- [BU] Nomination panellists and judges must be able to review submitted episodes and performance reels through the portal.
-- [BU] The portal must support the relevant languages required across the award programmes.
-- [Internal] The portal should provide consistent navigation and a standardised user experience across the four portal areas.
-- [Internal] The portal should provide a responsive and user-friendly interface.
-- [Internal – To confirm] Accessibility standards, such as WCAG compliance, keyboard navigation and screen-reader support, should be determined.
-
-#### Browser/Platform Support
-- [BU] The portal must allow overseas users to access the system and relevant content.
-- [BU] Video content must be reviewable through the portal.
-- [Internal] The portal should support consistent navigation across the Submission, Admin, Nomination and Judging portals.
-- [Internal] The portal should provide responsive design for different screen sizes.
-- [Internal – To confirm] Supported browsers, browser versions, desktop and mobile requirements, and video formats should be confirmed with IT.
 
 ---
 
@@ -673,8 +526,6 @@ Key Screens:
    - **Feedback:** Pending tasks are highlighted so Admin can identify outstanding votes or scores and send reminders.
 
 ### Design Principles for This Product
-- Role-based experience: Each stakeholder should have a dashboard with functions relevant to their responsibilities.
-- Simple navigation: Keep the interface intuitive and make important actions easy to locate.
 - Clear progress visibility: Use clear status indicators to show completed and pending submissions, votes and scores.
 - Centralised review: Allow panellists and judges to review entry details and watch videos directly within the portal.
 - Security and confidentiality: Restrict access to assigned categories and keep panel member identities confidential.
@@ -682,106 +533,21 @@ Key Screens:
 
 ---
 
-## Technical Specifications (TBD)
-
-### System Architecture
-[High-level architecture overview - link to detailed technical design doc if available]
-
-### Data Model
-[Key entities and relationships - link to data schema if available]
-
-### API Requirements
-
-#### Endpoints Needed
-| Endpoint | Method | Purpose | Request | Response |
-|----------|--------|---------|---------|----------|
-| `/api/[resource]` | GET | [Purpose] | [Params] | [Response structure] |
-| `/api/[resource]` | POST | [Purpose] | [Body] | [Response structure] |
-
-### Third-Party Integrations
-- **[Service Name]:** [Purpose, authentication method, rate limits]
-- **[Service Name]:** [Same structure]
-
-### Technical Constraints
-- [Known limitations or technical debt that impacts this product]
-- [Platform/framework constraints]
-
-### Analytics & Tracking
-
-#### Events to Track
-| Event Name | Trigger | Properties | Purpose |
-|------------|---------|------------|---------|
-| `[event_name]` | [When it fires] | [Data captured] | [Why we track it] |
-| `[event_name]` | [When it fires] | [Data captured] | [Why we track it] |
-
----
-
-## Go-to-Market Strategy (TBD)
-
-### Launch Plan
-- **Beta/Alpha Testing:** [Timeline, participant criteria, feedback loop]
-- **Phased Rollout:** [If applicable - % of users per phase]
-- **Launch Date:** [Target date]
-- **Launch Channels:** [How we'll announce: email, blog, in-app, PR, etc.]
-
-### Marketing & Positioning
-- **Value Proposition:** [One sentence describing the value]
-- **Key Messages:** 
-  - [Message for user segment 1]
-  - [Message for user segment 2]
-- **Marketing Channels:** [Paid ads, content, partnerships, etc.]
-
-### Sales Enablement (if B2B)
-- **Sales Materials:** [Decks, one-pagers, demo scripts]
-- **Pricing/Packaging:** [How this fits into pricing tiers]
-- **Training Required:** [What sales team needs to know]
-
-### Support & Documentation
-- **User Documentation:** [Help articles, tutorials, videos]
-- **Support Team Training:** [Timeline, materials needed]
-- **FAQ:** [Common questions and answers]
-
----
-
-## Dependencies & Risks
-
-### Dependencies (TBD)
-| Dependency | Owner | Status | Impact if Delayed | Mitigation |
-|------------|-------|--------|-------------------|------------|
-| [Dependency 1] | [Team/Person] | [On Track/At Risk/Blocked] | [Impact] | [Plan B] |
-| [Dependency 2] | [Team/Person] | [Status] | [Impact] | [Plan B] |
-
-### Risks & Mitigation (TBD)
-
-#### High Risk
-1. **[Risk Description]**
-   - **Probability:** [High/Medium/Low]
-   - **Impact:** [High/Medium/Low]
-   - **Mitigation:** [How we'll address this]
-   - **Owner:** [Who's responsible]
-
-#### Medium Risk
-1. **[Risk Description]**
-   - [Same structure as above]
-
-### Open Questions
+## Open Questions
 
 #### Access and users
-1.	Who is allowed to access each portal, and who is allowed to submit entries?
-2. Who are the admins and how many admins are there; do all have the same rights?
-3. How many panellists and judges does each programme have, and are any based overseas?
-4.	How should login work for panellists and judges (emailed credentials, one-time link, SSO)? Is there a password reset?
-5.	Do all four award programmes use the same platform and login system?
-6.	Can one user account submit entries for multiple award programmes?
+1.	Who is allowed access to each portal? What portals can the admin access?
+2.  How many panellists and judges does each programme have?
+3.	How should login work for panellists and judges (emailed credentials, one-time link, SSO)? Is there a password reset?
+4.	Do all four award programmes use the same platform and login system?
 
 #### Categories, forms and fields
-1. Please provide the full list of categories per programme (PV, SSA, PP, MSA) and each category type.
-2. For each category, which fields are mandatory and which are optional? Please share the current Stemcore form as a baseline.
-3.	What are the field limits: character or word counts for synopsis and bios, and bilingual fields (EN plus Chinese, Malay, Tamil)?
+1. Please provide the full list of categories per Awards programme (PV, SSA, PP, MSA) and each category type.
+2. For each category, please provide the full list of the fields? Please share the current Stemcore form as a baseline.
+3. What are the field limits: character or word counts for synopsis and bios, and bilingual fields (EN plus Chinese, Malay, Tamil)?
 4.	What are the file requirements: maximum size per file and per submission, accepted formats, maximum number of photos and documents, image resolution and dimensions, and video length, resolution and format?
-5.	Are episodes submitted as links or uploaded files? Which platforms should links support, and can overseas judges open them?
-6.	Which categories need extra fields (such as Best Theme Song), and what are they?
-7.	Is there an eligibility check (for example performer and category, release period)? Is it manual or automatic?
+5.	Are episodes submitted as links or uploaded files? 
+6.	Which categories need extra fields (such as Best Theme Song), and what are the fields?
 
 #### Submission rules
 1.	Can a submitter save a draft? Can they edit after submitting, and until when?
@@ -789,8 +555,8 @@ Key Screens:
 3.	Which rules and declaration text apply to each programme?
 
 #### Admin portal
-1.	Who checks every entry, and what exactly do they check?
-2.	Which fields can the admin edit, and does the submitter get notified of edits?
+1.	What exactly do they check for each submission entry?
+2.	Can admins edit categories and fields?
 3.	Can admins return an entry to the submitter for corrections?
 4.	Can admins reject or disqualify an entry? What happens afterwards?
 5.	Do admins need to configure each award themselves (categories, forms, deadlines), or will that be set up once by IT?
@@ -800,15 +566,16 @@ Key Screens:
 
 #### Nomination panel
 1.	How should the system show voting progress: not started, in progress or submitted? What else must panellists see?
-2. Should the panellist see the submitter’s identity, or should entries be anonymised?
-3.	What exactly should appear in the entry summary? The episode is a field, so how many episodes are shown per entry?
+2.  Should the nomination panellist see the submitter’s identity, or should entries be anonymised?
+3.	What exactly should appear in each submission entry summary? 
 4.	What is the voting mechanism?
 5.	Can a vote be changed after submitting? Can admin reopen it?
 
 #### Judging and scoring
 1. What is the voting mechanism?
-2.	Can a vote be changed after submitting? Can admin reopen it?
-3. What exactly should appear in the entry summary? The episode is a field, so how many episodes are shown per entry?
+2. Can a vote be changed after submitting? Can admin reopen it?
+3. What exactly should appear in the entry summary?
+4. Should the judge see the nomination panellist’s identity, or should entries be anonymised?
 
 #### Configurability and reuse
 1.	Should forms, categories and criteria be configurable by admins, or fixed per year?
@@ -826,67 +593,3 @@ Key Screens:
 2.	Does the BU have an existing eligible artistes database (names, years of experience, eligibility rules)?
 
 ---
-
-## Timeline & Milestones (TBD)
-
-### Development Phases 
-
-| Phase | Timeline | Key Deliverables | Owner |
-|-------|----------|------------------|-------|
-| **Discovery** | [Dates] | User research, competitive analysis | [PM] |
-| **Design** | [Dates] | Wireframes, mockups, user testing | [Design] |
-| **Development Sprint 1** | [Dates] | [Core features] | [Engineering] |
-| **Development Sprint 2** | [Dates] | [Additional features] | [Engineering] |
-| **QA & Testing** | [Dates] | Test plan execution, bug fixes | [QA] |
-| **Beta Launch** | [Dates] | Limited release, feedback collection | [PM] |
-| **Full Launch** | [Dates] | General availability | [PM] |
-| **Post-Launch** | [Dates] | Monitoring, iteration | [PM] |
-
-### Key Milestones
-- **[Milestone 1]:** [Date] - [Description]
-- **[Milestone 2]:** [Date] - [Description]
-- **[Milestone 3]:** [Date] - [Description]
-
----
-
-
-
----
-
-## Post-Launch Plan (TBD)
-
-### Success Criteria Check-in Schedule
-- **Week 1:** [Metrics to review]
-- **Week 4:** [Metrics to review]
-- **Week 12:** [Metrics to review]
-
-### Iteration Plan
-- **Feedback Collection:** [Methods and frequency]
-- **Update Cadence:** [How often we'll ship improvements]
-- **Sunset Plan:** [If applicable - when and how we might deprecate]
-
-### Learning Goals
-- [What we want to learn from this launch]
-- [How we'll capture and share learnings]
-
----
-
-## Appendix (TBD)
-
-### References
-- [Link to user research]
-- [Link to competitive analysis]
-- [Link to technical design doc]
-- [Link to design files]
-
-### Changelog
-| Date | Version | Changes | Author |
-|------|---------|---------|--------|
-| [Date] | 1.0 | Initial draft | [Name] |
-| [Date] | 1.1 | [Description] | [Name] |
-
-### Stakeholder Approvals
-- [ ] Engineering Lead - [Name] - [Date]
-- [ ] Design Lead - [Name] - [Date]
-- [ ] Marketing Lead - [Name] - [Date]
-- [ ] Executive Sponsor - [Name] - [Date]
