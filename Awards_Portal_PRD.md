@@ -246,6 +246,7 @@ Period open and categories assigned → log in → see assigned categories only 
 ## User Experience & Design
 
 ### User Flow Diagram
+
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': {'noteBkgColor': '#ffffff', 'noteBorderColor': '#7a7a7a', 'noteTextColor': '#222222', 'actorBkg': '#f2f2f2', 'actorBorder': '#7a7a7a', 'actorTextColor': '#222222', 'signalColor': '#333333', 'activationBkgColor': '#ffffff'}}}%%
 sequenceDiagram
@@ -257,6 +258,7 @@ sequenceDiagram
 
     rect rgb(255, 244, 224)
         Note over S,J: PHASE 1 - SETUP
+        Note over A: Log in
         Note over A: Configure programme, categories,<br/>forms, deadlines and rules
         Note over A: Run test submission
         Note over A: Open submission period
@@ -273,46 +275,29 @@ sequenceDiagram
         A-->>S: Confirmation message / email
     end
 
-    rect rgb(255, 244, 224)
-        Note over S,J: PHASE 3 - ADMIN REVIEW AND VALIDATION
-        loop For each entry, until validated
-            Note over A: Review entry and<br/>supporting materials
-            alt Corrections needed (return flow TBC)
-                A->>S: Return entry with note
-                S->>A: Amend and resubmit
-            else Complete and eligible
-                Note over A: Validate entry<br/>(add 5-min nominee reel if needed)
-            end
-        end
-    end
-
     rect rgb(234, 247, 238)
-        Note over S,J: PHASE 4 - NOMINATION
+        Note over S,J: PHASE 3 - NOMINATION
         Note over A: Close submissions
-        A->>N: Assign categories, send login details,<br/>release validated entries
+        A->>N: Assign categories, send login details,<br/>release submitted entries
         Note over N: Log in, see assigned<br/>categories only
         Note over N: Review entries and<br/>watch episodes in portal
         Note over N: Pick top 5 per category and review<br/>selection (mechanism TBC)
         N->>A: Submit nominations
+        A-->>N: Confirmation message / email
         loop While any votes are outstanding
             Note over A: Monitor nomination progress
             A-->>N: Send reminder
         end
     end
 
-    rect rgb(255, 244, 224)
-        Note over S,J: PHASE 5 - SHORTLIST
-        Note over A: Consolidate top-5 votes<br/>per category
-        Note over A: Confirm shortlist
-    end
-
     rect rgb(243, 234, 249)
-        Note over S,J: PHASE 6 - JUDGING
+        Note over S,J: PHASE 4 - JUDGING
         A->>J: Assign categories, send login details,<br/>release shortlisted entries
         Note over J: Log in, see assigned<br/>categories only
         Note over J: Review shortlisted entries,<br/>episodes and performance reel
         Note over J: Score each criterion and add comments<br/>(draft save is P1)
         J->>A: Submit scores
+        A-->>J: Confirmation message / email
         loop While any scores are outstanding
             Note over A: Monitor judging progress
             A-->>J: Send reminder
@@ -320,7 +305,7 @@ sequenceDiagram
     end
 
     rect rgb(255, 244, 224)
-        Note over S,J: PHASE 7 - RESULTS AND CLOSE-OUT
+        Note over S,J: PHASE 5 - RESULTS AND CLOSE-OUT
         Note over A: Consolidate scores and rankings
         Note over A: Confirm final results,<br/>resolve ties (rules TBC)
         Note over A: Delete personal data (PDPA),<br/>keep configuration for next cycle
