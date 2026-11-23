@@ -37,7 +37,7 @@ Explore a centralised awards management platform with four main areas: Submissio
 - **Role:** Internal production team member or external production house representative submitting award entries.
 - **Goals:** Submit entries, upload supporting materials, and track submission status.
 - **Pain Points:** Understanding category requirements, completing submission forms, and ensuring all required materials are provided.
-- 
+  
 ### Primary Persona 3 : Nomination Panellist
 - **Role:** Assigned panellist responsible for reviewing entries and selecting nominees.
 - **Goals:** Access assigned categories, review submissions and supporting materials, and submit nominations
@@ -52,6 +52,7 @@ Explore a centralised awards management platform with four main areas: Submissio
 
 #### Use Case 1: Submit an Award Entry
 **Actor:** Submitter 
+
 **Flow:**
 Flow: Submission period open → log in → choose programme and category → complete form and upload materials → accept declaration → submit → confirmation
 
@@ -59,6 +60,7 @@ Flow: Submission period open → log in → choose programme and category → co
 
 #### Use Case 2: Manage the awards process
 **Actor:** Awards Working Committee Admin 
+
 **Flow:**
 Set up programme and users → open submissions → validate or return entries → assign panellists and judges, release entries → monitor and send reminders → consolidate top-5 votes into shortlist → consolidate scores → confirm results (resolve ties)
 
@@ -66,6 +68,7 @@ Set up programme and users → open submissions → validate or return entries �
 
 #### Use Case 3: Nominate or score
 **Actor:** Nomination Panellist/Judge
+
 **Flow:**
 Period open and categories assigned → log in → see assigned categories only → review entries and watch episodes in portal → panellist picks top 5 / judge scores each criterion and comments → review → submit
 
