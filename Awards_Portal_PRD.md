@@ -29,131 +29,47 @@ Explore a centralised awards management platform with four main areas: Submissio
 ## User Personas & Use Cases
 
 ### Primary Persona 1 : Awards Working Committee Admin
-- **Role:** Internal committee member responsible for managing the awards process - still unclear what the exact responsibilities are
-- **Goals:** Configure programmes and categories, manage submissions and users, assign panellists and judges, monitor progress, and consolidate results - clarify
+- **Role:** Internal committee member responsible for managing the awards process
+- **Goals:** Configure programmes and categories, manage submissions and users, assign panellists and judges, monitor progress, and consolidate results
 - **Pain Points:** Coordinating multiple stakeholders, tracking progress, and managing different requirements across award programmes
-- **Technical Proficiency:** TBC
-- **Context:** Uses the Admin Portal throughout the awards cycle
 
 ### Primary Persona 2 : Submitter/Production Houses
-- **Role:** Internal production team member or external production house representative submitting award entries. - still unclear what the exact responsibilities are
-- **Goals:** Submit entries, upload supporting materials, and track submission status. - clarify
+- **Role:** Internal production team member or external production house representative submitting award entries.
+- **Goals:** Submit entries, upload supporting materials, and track submission status.
 - **Pain Points:** Understanding category requirements, completing submission forms, and ensuring all required materials are provided.
-- **Technical Proficiency:** TBC
-- **Context:** Uses the Submission Portal during the submission period
-
+- 
 ### Primary Persona 3 : Nomination Panellist
-- **Role:** Assigned panellist responsible for reviewing entries and selecting nominees. - still unclear what the exact responsibilities are
-- **Goals:** Access assigned categories, review submissions and supporting materials, and submit nominations - clarify
+- **Role:** Assigned panellist responsible for reviewing entries and selecting nominees.
+- **Goals:** Access assigned categories, review submissions and supporting materials, and submit nominations
 - **Pain Points:** Reviewing multiple entries and completing nominations within the given timeframe
-- **Technical Proficiency:** TBC
-- **Context:** Uses the Nomination Portal during the nomination period
 
 ### Primary Persona 4 : Judge
-- **Role:** Assigned judge responsible for evaluating shortlisted entries - still unclear what the exact responsibilities are
-- **Goals:** Review shortlisted entries, assess them against judging criteria, and submit scores and comments - clarify
+- **Role:** Assigned judge responsible for evaluating shortlisted entries
+- **Goals:** Review shortlisted entries, assess them against judging criteria, and submit scores and comments 
 - **Pain Points:** Accessing large video files, evaluating multiple entries, and completing scoring within the judging period
-- **Technical Proficiency:** TBC
-- **Context:** Uses the Judging Portal during the judging period
 
 ### Key Use Cases (simplified workflow)
 
 #### Use Case 1: Submit an Award Entry
 **Actor:** Submitter 
-**Preconditions:** Submission period is open and the submitter has portal access. -  clarify
 **Flow:**
-1. Submitter logs in using their account details or the agreed login method (to be confirmed).
-2. The portal displays the award programme(s) that the submitter is authorised to submit for.
-3. Submitter selects the relevant award programme, if more than one is available to them.
-4. Submitter selects the category they wish to submit an entry under.
-5. The portal displays the submission form and requirements for that category.
-6. Submitter fills in the required details, such as entry title, description, production information and other programme-specific fields.
-7. Submitter uploads the required supporting materials, such as episodes, programme materials or performance reels.
-8. Submitter reviews the completed form and uploaded files.
-9. Submitter accepts the relevant declarations or terms, where applicable, and submits the entry.
-10. The portal records the submission and displays a confirmation message. A confirmation email may also be sent.
-
-**Expected Outcome:** Entry is successfully submitted and recorded in the portal. -  needs more clarity
+Flow: Submission period open → log in → choose programme and category → complete form and upload materials → accept declaration → submit → confirmation
 
 **Edge Cases:** Missing mandatory fields, unsupported or oversized files, or submission deadline has passed.
 
-#### Use Case 2: Awards Working Committee Admin
+#### Use Case 2: Manage the awards process
 **Actor:** Awards Working Committee Admin 
-**Preconditions:** Admin has portal access and submissions have been received -clarify
 **Flow:**
-1. Admin logs in using their authorised account.
-2. The portal displays the Admin Dashboard, showing the award programmes available for management.
-3. Admin selects the award programme they wish to configure.
-4. Admin sets up the programme by configuring its categories, submission forms, deadlines and award phases
-5. Admin sets up the relevant nomination rules and judging criteria for each category.
-6. Admin adds or imports the relevant users, including submitters, panellists and judges, and manages their access permissions.
-7. Admin prepares test accounts or submissions to check that the programme is configured correctly before launch, if a test environment is available.
-8. Admin opens the submission period for the relevant award programme.
-9. Admin monitors incoming submissions through the dashboard.
-10. Admin reviews submitted entries and their supporting materials.
-11. Admin checks whether entries meet the submission requirements and validates them.
-12. If an entry requires corrections, Admin returns it to the submitter with a note explaining what needs to be amended.
-13. Admin reviews the corrected entry once it has been resubmitted.
-14. Once the submission period closes and entries have been validated, Admin prepares them for the nomination stage.
-15. Admin assigns panellists to their respective categories.
-16. Admin sends the panellists their login details and releases the relevant entries for review.
-17. Admin monitors nomination progress through the dashboard, including which panellists have completed their votes.
-18. Admin sends reminders to panellists who have not submitted their nominations.
-19. Once nominations are completed, Admin consolidates the top-five votes for each category.
-20. Admin reviews and confirms the shortlist before releasing it to the judges.
-21. Admin assigns judges to their respective categories.
-22. Admin sends the judges their login details and releases the shortlisted entries for judging.
-23. Admin monitors judging progress through the dashboard.
-24. Admin sends reminders to judges who have not submitted their scores.
-25. Once judging is completed, Admin consolidates the scores and rankings.
-26. Admin reviews and confirms the final results, including resolving ties where necessary.
-
-**Expected Outcome:** Submissions are reviewed and the awards process is managed centrally. -  needs more clarity
+Set up programme and users → open submissions → validate or return entries → assign panellists and judges, release entries → monitor and send reminders → consolidate top-5 votes into shortlist → consolidate scores → confirm results (resolve ties)
 
 **Edge Cases:** Incomplete or ineligible entries, incorrect category assignments, or entries requiring reopening.
 
-#### Use Case 3: Review Entries and Submit Nominations
-**Actor:** Nomination Panellist 
-**Preconditions:** Nomination period is open and entries have been assigned to the panellist. - clarify
+#### Use Case 3: Nominate or score
+**Actor:** Nomination Panellist/Judge
 **Flow:**
-1. Panellist logs in using the login details provided by the Admin.
-2. The portal directs the panellist to the relevant award programme based on their assigned access.
-3. The portal displays only the categories assigned to that panellist.
-4. Panellist selects a category to review.
-5. The portal displays the entries submitted under that category.
-6. Panellist selects an entry to view its details, including the submission information and supporting materials.
-7. Panellist reviews the entry and watches the relevant episodes or performance reels directly within the portal.
-8. Panellist repeats the review process for the other entries in the assigned category.
-9. Panellist selects their top five entries for that category, according to the nomination rules. 
-10. The portal displays the selected entries for the panellist to review before submission.
-11. Panellist confirms and submits their nominations.
-12. The portal records the nominations and updates the submission status.
-
-**Expected Outcome:** Nominations are recorded for the assigned categories. -  needs more clarity
+Period open and categories assigned → log in → see assigned categories only → review entries and watch episodes in portal → panellist picks top 5 / judge scores each criterion and comments → review → submit
 
 **Edge Cases:** Incomplete entries, inaccessible supporting materials, or nomination deadline has passed.
-
-#### Use Case 4: Evaluate Shortlisted Entries
-**Actor:** Judge
-**Preconditions:** Judging period is open and shortlisted entries have been assigned to the judge.
-**Flow:**
-1. Judge logs in using the login details provided by the Admin.
-2. The portal directs the judge to the relevant award programme based on their assigned access.
-3. The portal displays only the categories assigned to that judge.
-4. Judge selects a category to review.
-5. The portal displays the shortlisted entries for that category.
-6. Judge selects an entry to view its details, including submission information and supporting materials.
-7. Judge watches the relevant episodes or performance reels directly within the portal.
-8. Judge reviews the entry against the judging criteria provided for that category.
-9. Judge enters scores for each judging criterion and adds comments where required.
-10. Judge saves their scores, where draft saving is supported.
-11. Judge reviews the completed scores before submitting them.
-12. Judge submits the scores for the category.
-13. The portal records the scores and updates the judging status.
-
-**Expected Outcome:** EJudging scores and comments are recorded for the assigned entries. -  needs more clarity
-
-**Edge Cases:** Inaccessible videos, incomplete scoring, or judging deadline has passed.
 
 ---
 
