@@ -5,6 +5,7 @@
 ## Executive Summary
 
 **Product Name:** Mediacorp Awards Portal
+
 **Problem Statement:**  
 Mediacorp currently uses Stemcore to manage its four award programmes: Pradhana Vizha (PV), Star Awards (SSA), Pesta Perdana (PP) and Media Screen Awards (MSA). The current platform has limitations in stability and user experience, and there is a need to better support the different stakeholders involved in submissions, administration, nominations and judging.
 
@@ -258,7 +259,7 @@ Explore a centralised awards management platform with four main areas: Submissio
      - [ ] Panellists can identify categories for which votes have not yet been submitted.
      - [ ] Voting information is kept confidential.
 
-8. **Judging Panel Review and Scoring [BU + Internal – Process to Confirm]**
+8. **Judging Panel Review and Scoring [BU + Internal**
    - **Description:** Allow Judges to review assigned shortlisted entries and complete the required evaluation.
    - **User Story:** As a Judge, I want to review shortlisted entries and evaluate them using the relevant judging criteria so that the entries can be assessed.
      - [ ] Judges can view the award categories assigned to them.
