@@ -93,9 +93,7 @@ Period open and categories assigned → log in → see assigned categories only 
    - **Description:** Support the different award programmes, categories and category-specific **submission requirements**.
    - **Requirements:**
      - [ ] The portal supports Pradhana Vizha (PV), Star Awards (SSA), Pesta Perdana (PP) and Media Screen Awards (MSA).
-     - [ ] The portal supports performance categories
-     - [ ] The portal supports programme categories
-     - [ ] The portal supports the different categories and requirements under MSA.
+     - [ ] The portal supports performance and programme categories
      - [ ] Each category can have its own relevant submission fields.
      - [ ] Special categories can include additional information fields where required, such as composer and lyricist details for Best Theme Song. (Eg, MSA)
 
@@ -122,18 +120,15 @@ Period open and categories assigned → log in → see assigned categories only 
    - **Requirements:**
      - [ ] Admin can view all submitted entries and manage submission information across the different award programmes.
      - [ ] Admin can review the information and supporting materials for each entry.
-     - [ ] Admin can check, modify, validate and return submitted entries
-     - [ ] Admin can upload additional materials, including five-minute nominee performance reels for judging.
-
+     - [ ] Admin can check, modify and validate submitted entries
+     - [ ] Admin can upload additional materials
+           
 6. **Admin Dashboard and Task Management [BU + Internal]**
    - **Description:** Provide a **central dashboard** for the Awards Working Committee to monitor award progress and outstanding tasks.
    - **Requirements:**
      - [ ] Admin can filter information by award programme, category and submission status.
      - [ ] Admin can search for relevant entries and users.
      - [ ] Admin can access a centralised view of outstanding tasks and votes
-     - [ ] Admin can export entries, shortlists, scores and results.
-     - [ ] The portal supports exporting reports to Excel and PDF.
-     - [ ] Admin can generate reports across award categories and programmes.
 
 7. **Nomination and Judging Panel Management [BU + Internal]**
    - **Description:** Allow the Awards Working Committee to **manage nomination panellist and judge information, assignments and portal access.**
@@ -143,20 +138,19 @@ Period open and categories assigned → log in → see assigned categories only 
      - [ ] Admin can manage and distribute login information to nomination panellists and judges.
      - [ ] Admin can monitor nomination panellists' and judges' progress.
      - [ ] Admin can identify panellists and judges who have not submitted their votes.
-     - [ ] Admin can monitor progress across the different award categories.
-     - [ ] The system records voting submissions and timestamps.
 
 8. **Nomination Panel Review and Voting [BU + Internal]**
    - **Description:** Allow Nomination Panellists to **review entries in their assigned categories and submit their top-five votes.**
    - **Requirements:**
      - [ ] Panellists can view and access the award categories and entries assigned to them
      - [ ] Panellists cannot view the identities of other panellists.
+     - [ ] Panellists can view a summary of each assigned entry
      - [ ] Panellists can view relevant information such as performance reels and episodes of each assigned entry.
-     - [ ] Panellists can review submitted episodes.
      - [ ] Panellists can cast their top-five votes for each applicable category.
      - [ ] The portal records submitted votes.
      - [ ] The portal tracks voting progress.
      - [ ] Panellists can identify categories for which votes have not yet been submitted.
+     - [ ] The Nomination Portal uses the proposed colour indicators for the progress indicator: white for scoring not completed, yellow for completed but not submitted, and green for submitted.
 
 9. **Judging Panel Review and Scoring [BU + Internal**
    - **Description:** Allow Judges to **review assigned shortlisted entries and complete the required evaluation.**
@@ -218,11 +212,10 @@ Period open and categories assigned → log in → see assigned categories only 
      - [ ] Test data can be removed before launch.
 
 #### Nice to Have (P2) - Future Consideration
-1. **AI-Assisted Submission Checks and Summaries [Internal]**
+1. **AI-Assisted Submission Checks [Internal]**
    - **Description:** Explore **AI-assisted functions** to help review submission information and generate summaries.
    - **Requirements:**
      - [ ] The portal can provide AI-assisted checks on submitted information.
-     - [ ] The portal can generate summaries of submitted entries.
      - [ ] AI-generated information can be reviewed by an authorised user before being used.
 
 2. **Historical Winners and Artistes Database [BU + Internal]**
@@ -319,74 +312,61 @@ The user flow covers the four main stakeholders: Submitter, Admin, Nomination Pa
 ### Wireframes/Mockups
 Interactive HTML wireframe: [Open the wireframe](./awards_portal_wireframe.html)
 
-Open it in a browser. Use the role buttons at the top to switch between Submitter, Admin, Nomination Panellist and Judge. "Reset demo" restores the starting state.
-
 Key Screens:
 - Submitter dashboard
 - Award entry submission form
 - Admin dashboard
 - Nomination panel dashboard
 - Judge dashboard
-- Entry review and video playback screen
-- Judging and scoring interface
 
 ## Open Questions
 
 #### Access and users
-1.	Who is allowed access to each portal? What portals can the admin access?
+1.	Does the admin have access to all portals or just the admin portal?
 2.  How many panellists and judges does each programme have?
-3.	How should login work for panellists and judges (emailed credentials, one-time link, SSO)? Is there a password reset?
+3.	How are the admin sending out the login info, similtanuoesly to panellists and judges or individually? Via email or anything else? What is the login info (emailed credentials, one-time link, SSO)? Is there a password reset?
 4.	Do all four award programmes use the same platform and login system?
 
 #### Categories, forms and fields
-1. Please provide the full list of categories per Awards programme (PV, SSA, PP, MSA) and each category type.
-2. For each category, please provide the full list of the fields? Please share the current Stemcore form as a baseline.
-3. What are the field limits: character or word counts for synopsis and bios, and bilingual fields (EN plus Chinese, Malay, Tamil)?
-4.	What are the file requirements: maximum size per file and per submission, accepted formats, maximum number of photos and documents, image resolution and dimensions, and video length, resolution and format?
-5.	Are episodes submitted as links or uploaded files? 
-6.	Which categories need extra fields (such as Best Theme Song), and what are the fields?
+1. Please provide the full list of category types (Eg, Performance) and categories (Eg, Best Actor) per Awards programme (PV, SSA, PP, MSA).
+2. For each category, please provide the full list of the fields. Please share the current Stemcore form as a baseline.
+3.	Which categories need extra fields (such as Best Theme Song), and what are the fields?
 
 #### Submission rules
-1.	Can a submitter save a draft? Can they edit after submitting, and until when?
-2.	Are late submissions allowed, and who approves them?
-3.	Which rules and declaration text apply to each programme?
+1.	What are the rules and declaration text? Is it the same for every Awards Programme?
+2.	After submission, do admin get email, notif? Do the production houses get email, notif of submission confirmation?
 
 #### Admin portal
-1.	What exactly do they check for each submission entry?
-2.	Can admins edit categories and fields?
-3.	Can admins return an entry to the submitter for corrections?
-4.	Can admins reject or disqualify an entry? What happens afterwards?
-5.	Do admins need to configure each award themselves (categories, forms, deadlines), or will that be set up once by IT?
-6.	Is there an approval step before a category is released to panellists? What happens if one is missed?
-7.	What do admins need to see on the dashboard, and what reports do they need to export?
-8.	Should test submissions take place in a separate testing environment rather than the live portal?
+1.	Powerpoint shows " To be able to review submitted entries " as crossed out, is it still needed?
+2.	Powerpoint shows " Check or modify submitted entries " as crossed out, is it still needed? What exactly do they check for each submission entry? What exactly can they modify?
+3.	Can admin send back the entry for changes or they just modify themselves?
+4.	What does it mean by " Update nomination + judging panel to system for assignment of categories." ?
+5.	Do the admin create the forms? Is the forms same or diff to each awards? Deadlines? Rules?
+6.	Is there a validation/approval step before a category is released to panellists/judges? Is it done manually or automated?
 
 #### Nomination panel
-1.	How should the system show voting progress: not started, in progress or submitted? What else must panellists see?
-2.  Should the nomination panellist see the submitter’s identity, or should entries be anonymised?
-3.	What exactly should appear in each submission entry summary? 
-4.	What is the voting mechanism?
-5.	Can a vote be changed after submitting? Can admin reopen it?
+1.  Should the nomination panellist see the submitter’s identity, or should entries be anonymised?
+2.	What exactly should appear in each submission entry summary? 
+3.	What is the voting mechanism/voting criteria?
+4.	Can a vote be changed after submitting? Can admin reopen it?
+5.	What does it mean by " Able to ID which categories which scores they have yet submitted. ​"?
 
 #### Judging and scoring
-1. What is the voting mechanism?
-2. Can a vote be changed after submitting? Can admin reopen it?
-3. What exactly should appear in the entry summary?
-4. Should the judge see the nomination panellist’s identity, or should entries be anonymised?
-
+1.  Should the judge see the nomination panellist’s identity, or should the chosen entries be anonymised?
+2.	What exactly should appear in each submission entry summary? 
+3.	What is the voting mechanism/voting criteria?
+4.	Can a vote be changed after submitting? Can admin reopen it?
+5.	What does it mean by " Able to ID which categories which scores they have yet submitted. ​"?
+   
 #### Configurability and reuse
-1.	Should forms, categories and criteria be configurable by admins, or fixed per year?
+1.	Should forms, categories and criteria be configurable by admins, IT, or fixed per year?
 2.	When data is cleared for PDPA, what is kept (forms, categories, users) and what is deleted, and when? Can historical award configurations be reused while personal data and old submissions are deleted?
 3.	Are winners kept in the system, for how long, and who approves deletion?
 
 #### Non-functional and operations
-1.	Which notifications and reminders are needed (login details, deadline reminders, confirmations)?
+1.	Are reminders from admin needed. If they do, is it via email? Automated?
 2.	What audit logs are required, and who reviews them?
 3.	Does the system need to migrate historical entries and user records from Stemcore?
 4.	Are there existing systems that need to integrate with the new portal?
-
-#### Wish list and data availability
-1.	Does the BU have historical winners’ records? How many years are available?
-2.	Does the BU have an existing eligible artistes database (names, years of experience, eligibility rules)?
 
 ---
